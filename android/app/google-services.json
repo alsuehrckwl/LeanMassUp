@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "408893078126",
+    "firebase_url": "https://lean-mass-up.firebaseio.com",
+    "project_id": "lean-mass-up",
+    "storage_bucket": "lean-mass-up.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408893078126:android:5e8232432782bdff",
+        "android_client_info": {
+          "package_name": "com.leanmassup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408893078126-f8252292kbtisrtuipjir3j1g32l4dml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.leanmassup",
+            "certificate_hash": "0cd41ed74384e03d7dcdbc395b61d54e32c0ee20"
+          }
+        },
+        {
+          "client_id": "408893078126-ucjoimcntli5s4ptf376taq2q8nluck9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9vhp2iBmctKuBELCsuky70hLolLvNFVM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408893078126-ucjoimcntli5s4ptf376taq2q8nluck9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
