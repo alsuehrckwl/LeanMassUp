@@ -137,12 +137,15 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-firebase')
+    // Kakao login
+    implementation project(':react-native-kakao-logins')
+    implementation group: 'com.kakao.sdk', name: 'kakaolink', version: project.KAKAO_SDK_VERSION
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
-    // This should be here already
+    // Firebase
     implementation project(':react-native-firebase')
 
     // Firebase dependencies

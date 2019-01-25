@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LeanMassUp</string>
+    <string name="kakao_app_key">ff4bbaa6c0332ae49fa1ec44e8f22539</string>
 </resources>
