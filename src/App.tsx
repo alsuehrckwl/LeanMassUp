@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
+import { RootContainer } from './containers/route/Route'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -14,13 +15,7 @@ type Props = OwnProps
 
 export default class App extends Component<Props> {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Lean Mass</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    )
+    return <RootContainer />
   }
 }
 

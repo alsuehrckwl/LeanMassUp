@@ -5,4 +5,6 @@ target 'LeanMassUp' do
 
   pod 'Firebase/Core'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 end
