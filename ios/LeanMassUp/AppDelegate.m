@@ -11,8 +11,16 @@
 #import <React/RCTRootView.h>
 #import <Firebase.h>
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @implementation AppDelegate
+
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  // facebook
+  [FBSDKAppEvents activateApp];
+  // kakao
+  [KOSession handleDidBecomeActive];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -29,6 +37,10 @@
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
+  
+  // 페이스북 소스
+  [[FBSDKApplicationDelegate sharedInstance] application:application
+                           didFinishLaunchingWithOptions:launchOptions];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
@@ -43,14 +55,22 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-  if ([KOSession isKakaoAccountLoginCallback:url]) {
-    return [KOSession handleOpenURL:url];
-  }
-  
-  return false;
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                        openURL:url
+                                              sourceApplication:sourceApplication
+                                                     annotation:annotation];
 }
+
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+//  sourceApplication:(NSString *)sourceApplication
+//         annotation:(id)annotation {
+//  if ([KOSession isKakaoAccountLoginCallback:url]) {
+//    return [KOSession handleOpenURL:url];
+//  }
+//
+//  return false;
+//}
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
             options:(NSDictionary<NSString *,id> *)options {
@@ -59,11 +79,6 @@
   }
   
   return false;
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-  [KOSession handleDidBecomeActive];
 }
 
 @end
